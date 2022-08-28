@@ -1,0 +1,42 @@
+{% extends "header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+<section class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="form-area login-form">
+                    <div class="form-content">
+                        <h2>Register</h2>
+                        <p>Register and start forecasting.</p>
+                    </div>
+                    <div class="form-input">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ register_form|crispy }}
+                            <div class="myform-button">
+                                <button class="myform-btn">Register</button>
+                            </div>
+                            <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div> -->
+
+{% endblock %}
