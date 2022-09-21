@@ -26,7 +26,7 @@ import math
 # Create your views here.
 
 
-@login_required
+# @login_required
 def makemodel(s_type):
     rcParams["figure.figsize"] = 20, 10
 
